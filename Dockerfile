@@ -7,7 +7,7 @@ LABEL name="Python Application" \
 # Create app directory
 WORKDIR /app
 
-EXPOSE 8081
+EXPOSE 8080
 
 RUN pip install flask
 
