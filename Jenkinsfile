@@ -3,7 +3,7 @@ pipeline{
 	agent any
 
 	environment {
-		DOCKERHUB_CREDENTIALS=credentials('dockerhub-mohsin')
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
 	}
 
 	stages {
@@ -12,6 +12,7 @@ pipeline{
 
 			steps {
 				sh 'docker build -t project2:latest .'
+				sh 'docker tag project2:latest mohsinm/project2:v1'
 			}
 		}
 
@@ -25,21 +26,21 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push project2:latest'
+				sh 'docker push mohsinm/project2:v1'
 			}
 		}
 
         stage('Pull') {
 
 			steps {
-				sh 'docker pull project2:latest'
+				sh 'docker pull mohsinm/project2:latest'
 			}
 		}
 
         stage('Run') {
 
 			steps {
-				sh 'docker run -itd --name project2 -p 8080:8080 project2:latest'
+				sh 'docker run -itd --name project2 -p 8080:8080 mohsinm/project2:latest'
 			}
 		}
 	}
