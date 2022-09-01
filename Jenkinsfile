@@ -40,7 +40,7 @@ pipeline{
         stage('Run') {
 
 			steps {
-				sh 'docker run -itd --name project2 -p 8080:8080 mohsinm/project2:latest'
+				sh 'docker run -itd --name project2 -p 8080:8080 mohsinm/project2:v1'
 			}
 		}
 	}
