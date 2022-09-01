@@ -33,7 +33,7 @@ pipeline{
         stage('Pull') {
 
 			steps {
-				sh 'docker pull mohsinm/project2:latest'
+				sh 'docker pull mohsinm/project2:v1'
 			}
 		}
 
