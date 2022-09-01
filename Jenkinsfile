@@ -18,14 +18,14 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push mohsinm/project2:latest'
+				sh 'docker push project2:latest'
 			}
 		}
 
         stage('Pull') {
 
 			steps {
-				sh 'docker pull mohsinm/project2:latest'
+				sh 'docker pull project2:latest'
 			}
 		}
 
