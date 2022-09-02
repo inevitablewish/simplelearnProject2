@@ -12,9 +12,7 @@ def hello():
 def getCount():
     global count
     count += 1
-    user = ['Mohsin', 'Andrew', 'Sharon']
-    while count < 3:
-        return str(user[count])
-    count=0
+    return str(count)
+    
 if __name__ == "__main__":
     app.run(host="0.0.0.0",port=8080)
