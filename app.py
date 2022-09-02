@@ -15,5 +15,6 @@ def getCount():
     user = ['Mohsin', 'Andrew', 'Sharon']
     while count < 3:
         return str(user[count])
+    count=0
 if __name__ == "__main__":
     app.run(host="0.0.0.0",port=8080)
