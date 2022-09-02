@@ -5,7 +5,7 @@ count = 0
 
 @app.route('/hello')
 def hello():
-    greeting = "Hello Mohsin!"
+    greeting = "Hello Mohsin! You are doing Project 2 of simplilearn"
     return greeting
 
 @app.route('/count', methods=["GET"])
