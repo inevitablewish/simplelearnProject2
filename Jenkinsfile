@@ -40,14 +40,8 @@ pipeline{
 		stage('Stop') {
 
 			steps {
-				script{
-                
-                    def doc_containers = sh(returnStdout: true, script: 'docker container ps -aq').replaceAll("\n", " ") 
-                    if (doc_containers) {
-                        sh "docker stop ${doc_containers}"
-                    }
-                    
-                }
+				sh 'docker ps -f name=project2 -q | xargs --no-run-if-empty docker container stop'
+				sh 'docker container ls -a -fname=project2 -q | xargs -r docker container rm'
 			}
 		}
 
