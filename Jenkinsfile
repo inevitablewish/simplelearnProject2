@@ -5,7 +5,7 @@ pipeline{
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub-mohsin')
 	}
-
+	on
 	stages {
 
 		stage('Build') {
@@ -34,6 +34,13 @@ pipeline{
 
 			steps {
 				sh 'docker pull mohsinm/project2:v1'
+			}
+		}
+
+		stage('Stop') {
+
+			steps {
+				sh 'docker stop project2:v1'
 			}
 		}
 
